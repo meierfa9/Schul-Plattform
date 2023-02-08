@@ -1,5 +1,5 @@
 package ch.zhaw.sml.iwi.meng.leantodo.boundary;
-
+/*
 import java.security.Principal;
 import java.util.List;
 
@@ -39,3 +39,4 @@ public class ToDoEndpoint {
         toDoController.updateToDo(toDo, principal.getName());
     }
 }
+*/
