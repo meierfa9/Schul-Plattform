@@ -2,6 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/tabs/home/"></ion-back-button>
+        </ion-buttons>
         <ion-title>Übersicht</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -14,23 +17,31 @@
 
       <ion-grid>
         <ion-row>
-          <ion-col size-xs="12" size-md="6">
-            <ion-card
-              button
-              :router-link="'/tabs/uebersicht/' + fach.titel"
-              v-for="fach in faecher"
-              :key="fach"
-            >
-              <img
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
-              />
+          <ion-col v-for="fach in faecher" :key="fach" size-xs="12" size-md="6">
+            <ion-card button :router-link="'/tabs/uebersicht/' + fach.titel">
+
+              <img v-if="fach.titel === 'Mathematik'" alt="Mathematik"
+                src="https://cdn-icons-png.flaticon.com/512/5012/5012407.png" />
+              <img v-if="fach.titel === 'Deutsch'" alt="Deutsch"
+                src="https://cdn-icons-png.flaticon.com/512/2112/2112025.png" />
+              <img v-if="fach.titel === 'Englisch'" alt="Englisch"
+                src="https://cdn-icons-png.flaticon.com/512/5238/5238411.png" />
+              <img v-if="fach.titel === 'Französisch'" alt="Französisch"
+                src="https://cdn-icons-png.flaticon.com/512/8079/8079879.png" />
+              <img v-if="fach.titel === 'Natur Mensch Gesellschaft'" alt="Natur Mensch Gesellschaft"
+                src="https://cdn-icons-png.flaticon.com/512/9601/9601647.png" />
+
+
               <ion-card-header>
                 <ion-card-title>{{ fach.titel }}</ion-card-title>
-                <ion-card-subtitle>Lehrperson</ion-card-subtitle>
+                <template v-for="lehrperson in lehrer" :key="lehrperson">
+                  <ion-card-subtitle v-if="fach.titel === lehrperson.fach">{{ lehrperson.name }}</ion-card-subtitle>
+                </template>
               </ion-card-header>
 
-              <ion-card-content> Offene Aufgaben </ion-card-content>
+              <ion-card-content> Offene Aufgaben
+                <ion-badge>Anzahl</ion-badge>
+              </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
@@ -41,6 +52,8 @@
 
 <script setup lang="ts">
 import {
+  IonBackButton,
+  IonBadge,
   IonCard,
   IonCardContent,
   IonCardHeader,
@@ -68,5 +81,23 @@ const { faecher, lehrer } = useFaecher();
 ion-card-header.ios {
   display: flex;
   flex-flow: column-reverse;
+}
+
+ion-card:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+ion-badge {
+  float: right;
+  font-size: 15pt;
+  background-color: red;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 </style>

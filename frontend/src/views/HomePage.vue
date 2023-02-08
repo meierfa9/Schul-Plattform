@@ -17,27 +17,32 @@
           <ion-col size-xs="12" size-md="6">
             <ion-card>
               <img
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                alt="done"
+                src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png"
+              
               />
               <ion-card-header>
                 <ion-card-title>Erledigte Aufgaben</ion-card-title>
               </ion-card-header>
 
-              <ion-card-content> Offene Aufgaben </ion-card-content>
+              <ion-card-content>Erledigte Aufgaben
+                <ion-badge>Anzahl</ion-badge>
+              </ion-card-content>
             </ion-card>
           </ion-col>
           <ion-col size-xs="12" size-md="6">
             <ion-card>
               <img
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                alt="todo"
+                src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
               />
               <ion-card-header>
                 <ion-card-title>Offene Aufgaben</ion-card-title>
               </ion-card-header>
 
-              <ion-card-content> Offene Aufgaben </ion-card-content>
+              <ion-card-content>Offene Aufgaben
+                <ion-badge>Anzahl</ion-badge>
+              </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
@@ -67,3 +72,24 @@ import {
   IonInput,
 } from "@ionic/vue";
 </script>
+
+<style scoped>
+
+ion-card:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+ion-badge {
+  float: right;
+  font-size: 15pt;
+  background-color: red;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
