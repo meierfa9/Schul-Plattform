@@ -14,20 +14,18 @@
 
       <ion-grid>
         <ion-row>
-          <ion-col size-xs="12" size-md="6">
-            <ion-card
-              button
-              :router-link="'/tabs/uebersicht/' + fach.titel"
-              v-for="fach in faecher"
-              :key="fach"
-            >
-              <img
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
-              />
+          <ion-col v-for="fach in faecher" :key="fach" size-xs="12" size-md="6">
+            <ion-card button :router-link="'/tabs/uebersicht/' + fach.titel">
+
+              <img v-if="fach.titel === 'Mathematik'" alt="Mathematik" src="https://www.shutterstock.com/image-vector/colorful-mathematics-word-concept-technical-260nw-1483052450.jpg" />
+              <img v-if="fach.titel === 'Deutsch'" alt="Deutsch" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+              <img v-if="fach.titel === 'Englisch'" alt="Englisch" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+
               <ion-card-header>
                 <ion-card-title>{{ fach.titel }}</ion-card-title>
-                <ion-card-subtitle>Lehrperson</ion-card-subtitle>
+                <template v-for="lehrperson in lehrer" :key="lehrperson">
+                  <ion-card-subtitle v-if="fach.titel === lehrperson.fach">{{ lehrperson.name }}</ion-card-subtitle>
+                </template>
               </ion-card-header>
 
               <ion-card-content> Offene Aufgaben </ion-card-content>
