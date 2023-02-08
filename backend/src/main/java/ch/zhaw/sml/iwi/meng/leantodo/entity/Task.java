@@ -4,24 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
 
 @Entity
 @Data
-public class ToDo {
+public class Task {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
-    private String title;
-
-    private boolean archived = false;
-    private boolean done = false;
-
-    @JsonIgnore
-    private String owner;
+    private String name;
+    private String description;
+    
 }

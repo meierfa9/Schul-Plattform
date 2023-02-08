@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import ch.zhaw.sml.iwi.meng.leantodo.entity.User;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.UserRepository;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.Person;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.PersonRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -22,17 +22,17 @@ public class TokenGenerator {
     private Long expiration = 3600L;
 
     @Autowired
-    private UserRepository userRepository;
+    private PersonRepository personRepository;
 
     public UserAuthResponse generateJWT(String username) {
 
         UserAuthResponse userAuthResponse = new UserAuthResponse();
 
-        User user = userRepository.findById(username).get();
+        Person user = personRepository.findById(username).get();
         if (user == null) {
             return null;
         }
-        userAuthResponse.setLoginName(user.getLoginName());
+        userAuthResponse.setLoginName(user.getUserName());
 
         Map<String, Object> claimsMap = new HashMap<>();
         String rolesCSV = "";
@@ -52,7 +52,7 @@ public class TokenGenerator {
 
         String token = Jwts.builder()
             .setClaims(new HashMap<>())
-            .setSubject(user.getLoginName())
+            .setSubject(user.getUserName())
             .addClaims(claimsMap)
             .setIssuedAt(creationDate)
             .setExpiration(expirationDate)
