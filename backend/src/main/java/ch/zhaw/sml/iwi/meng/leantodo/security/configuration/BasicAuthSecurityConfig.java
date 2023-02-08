@@ -29,8 +29,8 @@ public class BasicAuthSecurityConfig {
     
     @Bean
     public UserDetailsService jdbcUserDetailsService(DataSource dataSource) {
-        String userQuery = "SELECT login_name, password_hash, true FROM usertable WHERE login_name=?";
-        String roleQuery = "SELECT user_login_name, roles_role_name FROM usertable_roles WHERE user_login_name=?";
+        String userQuery = "SELECT user_name, password_hash, true FROM persontable WHERE user_name=?";
+        String roleQuery = "SELECT user_user_name, roles_role_name FROM persontable_roles WHERE user_login_name=?";
             
         JdbcUserDetailsManager users = new JdbcUserDetailsManager(dataSource);
 

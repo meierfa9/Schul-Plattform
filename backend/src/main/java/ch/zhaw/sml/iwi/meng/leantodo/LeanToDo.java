@@ -14,7 +14,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Role;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.RoleRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Student;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.Person;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.PersonRepository;
 @SpringBootApplication
 @EnableWebSecurity
@@ -47,9 +46,10 @@ public class LeanToDo implements CommandLineRunner {
             }
         };
     }
-   
+    
     @Override
     public void run(String... args) throws Exception {
+        /*
         Student u = new Student();
         u.setUserName("user");
         u.setPasswordHash(new BCryptPasswordEncoder().encode("user"));
@@ -58,5 +58,7 @@ public class LeanToDo implements CommandLineRunner {
         roleRepository.save(r);
         u.getRoles().add(r);
         personRepository.save(u);
+        */
     }
+    
 }
