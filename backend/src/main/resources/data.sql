@@ -1,2 +1,2 @@
-INSERT INTO TO_DO (title,archived,done,owner) VALUES ('Finish this app',false,false, 'user' );
-INSERT INTO TO_DO (title,archived,done,owner) VALUES ('Another task',false,false, 'user' );
+INSERT INTO TASK (name,description) VALUES ('Zahlen 1-100','Löse die Aufgaben 1-10' );
+INSERT INTO TASK (name,description) VALUES ('Freddy Müllers Text','Finde die Fallfehler' );

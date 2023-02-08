@@ -13,11 +13,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Role;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.RoleRepository;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ToDo;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.ToDoRepository;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.User;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.UserRepository;
-
+import ch.zhaw.sml.iwi.meng.leantodo.entity.Student;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.Person;
+import ch.zhaw.sml.iwi.meng.leantodo.entity.PersonRepository;
 @SpringBootApplication
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
@@ -27,16 +25,11 @@ public class LeanToDo implements CommandLineRunner {
         SpringApplication.run(LeanToDo.class, args);
         
     }
-
     @Autowired
-    private UserRepository userRepository;
+    private PersonRepository personRepository;
 
     @Autowired
     private RoleRepository roleRepository;
-
-    
-    @Autowired
-    private ToDoRepository toDoRepository;
 
     
     @Bean
@@ -57,13 +50,13 @@ public class LeanToDo implements CommandLineRunner {
    
     @Override
     public void run(String... args) throws Exception {
-        User u = new User();
-        u.setLoginName("user");
+        Student u = new Student();
+        u.setUserName("user");
         u.setPasswordHash(new BCryptPasswordEncoder().encode("user"));
         Role r = new Role();
         r.setRoleName("ROLE_USER");
         roleRepository.save(r);
         u.getRoles().add(r);
-        userRepository.save(u);
+        personRepository.save(u);
     }
 }
