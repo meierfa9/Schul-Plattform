@@ -17,8 +17,9 @@
           <ion-col size-xs="12" size-md="6">
             <ion-card>
               <img
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                alt="done"
+                src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png"
+              
               />
               <ion-card-header>
                 <ion-card-title>Erledigte Aufgaben</ion-card-title>
@@ -30,8 +31,8 @@
           <ion-col size-xs="12" size-md="6">
             <ion-card>
               <img
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
+                alt="todo"
+                src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
               />
               <ion-card-header>
                 <ion-card-title>Offene Aufgaben</ion-card-title>
@@ -67,3 +68,12 @@ import {
   IonInput,
 } from "@ionic/vue";
 </script>
+
+<style scoped>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
