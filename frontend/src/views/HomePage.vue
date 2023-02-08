@@ -25,7 +25,9 @@
                 <ion-card-title>Erledigte Aufgaben</ion-card-title>
               </ion-card-header>
 
-              <ion-card-content> Offene Aufgaben </ion-card-content>
+              <ion-card-content>Erledigte Aufgaben
+                <ion-badge>Anzahl</ion-badge>
+              </ion-card-content>
             </ion-card>
           </ion-col>
           <ion-col size-xs="12" size-md="6">
@@ -38,7 +40,9 @@
                 <ion-card-title>Offene Aufgaben</ion-card-title>
               </ion-card-header>
 
-              <ion-card-content> Offene Aufgaben </ion-card-content>
+              <ion-card-content>Offene Aufgaben
+                <ion-badge>Anzahl</ion-badge>
+              </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
@@ -70,6 +74,18 @@ import {
 </script>
 
 <style scoped>
+
+ion-card:hover {
+  background-color: lightgrey;
+  color: black;
+}
+
+ion-badge {
+  float: right;
+  font-size: 15pt;
+  background-color: red;
+}
+
 img {
   display: block;
   margin-left: auto;
