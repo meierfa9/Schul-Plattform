@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import Tabs from '../views/Tabs.vue'
 import Login from '../views/Login.vue'
+ 
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -27,6 +28,14 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'uebersicht/:fach',
         component: () => import('@/views/AufgabenPage.vue')
+      },
+      {
+        path: 'done',
+        component: () => import('@/views/DonePage.vue')
+      },
+      {
+        path: 'open',
+        component: () => import('@/views/OpenPage.vue')
       },
     ]
   }
