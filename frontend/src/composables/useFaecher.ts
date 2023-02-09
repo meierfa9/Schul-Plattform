@@ -11,11 +11,11 @@ export function useFaecher() {
 
     const getFaecher =async () => {
         faecher.value = await getFach();
-        //console.log(faecher)      
+        console.log(faecher)      
     }
 
     const getLehrer =async () => {
-        lehrer.value = [{name: "Peter Müller", fach: "Mathematik"}, {name: "Ferdi Pfoste", fach: "Deutsch"}]        
+        lehrer.value = [{name: "Peter Müller", faech: "Mathematik"}, {name: "Ferdi Pfoste", faech: "Deutsch"}]        
     }
 
     onMounted(() => {
