@@ -34,9 +34,9 @@
 
               <ion-card-header>
                 <ion-card-title>{{ fach.titel }}</ion-card-title>
-                <template v-for="lehrperson in lehrer" :key="lehrperson">
+                <div v-for="lehrperson in lehrer" :key="lehrperson">
                   <ion-card-subtitle v-if="fach.titel === lehrperson.fach">{{ lehrperson.name }}</ion-card-subtitle>
-                </template>
+                </div>
               </ion-card-header>
 
               <ion-card-content> Offene Aufgaben
