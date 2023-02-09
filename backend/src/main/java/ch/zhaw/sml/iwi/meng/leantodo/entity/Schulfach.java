@@ -21,6 +21,9 @@ public class Schulfach {
     private String title;
 
     @ManyToMany
-    private List<Role> teacher = new ArrayList<>();
-    
+    private List<Teacher> teacher = new ArrayList<>();
+
+    @ManyToMany
+    private List<Student> student = new ArrayList<>();
+
 }

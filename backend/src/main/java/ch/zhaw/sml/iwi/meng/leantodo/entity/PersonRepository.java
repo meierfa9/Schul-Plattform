@@ -1,9 +1,9 @@
 package ch.zhaw.sml.iwi.meng.leantodo.entity;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
+import org.springframework.data.jpa.repository.JpaRepository;
 public interface PersonRepository extends JpaRepository<Person, String>{
+
     
 }
