@@ -15,7 +15,7 @@
       <ion-grid>
         <ion-row>
           <ion-col size-xs="12" size-md="6">
-            <ion-card>
+            <ion-card button :router-link="'/tabs/done/'">
               <img
                 alt="done"
                 src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png"
@@ -31,7 +31,7 @@
             </ion-card>
           </ion-col>
           <ion-col size-xs="12" size-md="6">
-            <ion-card>
+            <ion-card button :router-link="'/tabs/open/'">
               <img
                 alt="todo"
                 src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
@@ -71,6 +71,8 @@ import {
   IonButton,
   IonInput,
 } from "@ionic/vue";
+import { useRoute } from "vue-router";
+
 </script>
 
 <style scoped>
