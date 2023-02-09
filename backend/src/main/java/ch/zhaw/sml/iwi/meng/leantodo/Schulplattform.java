@@ -11,25 +11,19 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import ch.zhaw.sml.iwi.meng.leantodo.entity.Role;
-import ch.zhaw.sml.iwi.meng.leantodo.entity.RoleRepository;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.Student;
 import ch.zhaw.sml.iwi.meng.leantodo.entity.PersonRepository;
 @SpringBootApplication
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
-public class LeanToDo implements CommandLineRunner {
+public class Schulplattform implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(LeanToDo.class, args);
+        SpringApplication.run(Schulplattform.class, args);
         
     }
     @Autowired
     private PersonRepository personRepository;
-
-    @Autowired
-    private RoleRepository roleRepository;
-
     
     @Bean
     public WebMvcConfigurer corsConfigurer() {

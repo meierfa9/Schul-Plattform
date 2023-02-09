@@ -41,13 +41,7 @@ public abstract class Person {
     @Id
     private String userName;
 
-    @JsonIgnore
-    private String passwordHash;
-
     private String name;
     private String surname;
-
-    @ManyToMany
-    private List<Role> roles = new ArrayList<>();
 
 }
