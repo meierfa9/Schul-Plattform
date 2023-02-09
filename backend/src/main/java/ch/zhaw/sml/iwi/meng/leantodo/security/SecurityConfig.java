@@ -66,6 +66,7 @@ public class SecurityConfig {
                                 .csrf().ignoringRequestMatchers(toH2Console()).and()
                                 .headers().frameOptions().sameOrigin();
                 http.csrf().disable();
+                http.cors();
                 return http.build();
         }
 
