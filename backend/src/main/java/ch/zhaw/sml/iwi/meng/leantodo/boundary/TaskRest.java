@@ -38,17 +38,14 @@ public class TaskRest {
         Task persistedTask = taskRepository.save(newTask);
         return ResponseEntity
             .created(URI
-                     .create(String.format("/persons/%s", newTask.getId())))
+                     .create(String.format("/persons/%s", newTask.getIdentity())))
             .body(persistedTask);
     }
 
-    @PutMapping(path = "/api/tasks/{id}")
-    public Task setTaskDone(@PathVariable("id") Long id, @RequestBody Task newTask){
-
-        Task current = taskRepository.findById(id).get();
-        current.setDone(newTask.getDone());
-        taskRepository.save(current);
-        return current;
+    @PutMapping(path = "/api/tasks")
+    public Task setTaskDone(@RequestBody Task newTask){
+        taskRepository.save(newTask);
+        return newTask;
 
     }
     @GetMapping(path = "/api/tasks/{done}")
@@ -59,7 +56,7 @@ public class TaskRest {
         List<JSONObject> entities = new ArrayList<JSONObject>();
         for (Task n : tasks) {
             JSONObject entity = new JSONObject();
-            entity.put("id", n.getId());
+            entity.put("id", n.getIdentity());
             entity.put("name", n.getName());
             entity.put("description", n.getDescription());
             entity.put("done", n.getDone());
