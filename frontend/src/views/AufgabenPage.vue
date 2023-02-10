@@ -16,7 +16,7 @@
       </ion-header>
       <ion-list>
         <div :key="aufgabe.id" v-for="aufgabe in tasks">
-          <ion-item v-if="!aufgabe.done">
+          <ion-item v-if="aufgabe.schulfach?.title === 'Mathematik' && !aufgabe.done ">
             <ion-grid>
               <ion-row>
                 <ion-col>
@@ -58,8 +58,11 @@ import {
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 import { useRoute } from "vue-router";
+import { useFaecher } from "../composables/useFaecher";
 
 const { tasks, finishTask /*addTask, archiveTask */ } = useTasks();
+
+const { faecher, lehrer } = useFaecher();
 
 const route = useRoute();
 const { fach } = route.params;

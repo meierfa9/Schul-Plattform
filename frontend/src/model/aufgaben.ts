@@ -3,4 +3,8 @@ export interface Aufgabe {
     name?: String;
     description?: String;
     done?: boolean;
+    schulfach?: {
+        id: number;
+        title: String;
+    }
 }
