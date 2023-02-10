@@ -17,7 +17,7 @@ public class Task {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long identity;
+    private long id;
 
     private String name;
     private String description;
@@ -26,7 +26,7 @@ public class Task {
 
     
     @ManyToOne(cascade=CascadeType.ALL)
-    @JsonUnwrapped
+    //@JsonUnwrapped
     private Schulfach schulfach;
     
     

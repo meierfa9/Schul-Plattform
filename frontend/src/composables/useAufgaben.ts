@@ -10,7 +10,7 @@ export function useTasks() {
     const tasksOpen = ref<any>([]);
 
     //const newTask = ref<Aufgabe>([]);
-
+    
     const getTasks = async () => {
         try {
             tasks.value = await getAufgabe();
@@ -19,7 +19,7 @@ export function useTasks() {
             console.log(error); // FIXME: Errorhandling
         }
     }
-
+    
     const getDoneTasks = async () => {
         try {
             tasksDone.value = await getDoneAufgabe();

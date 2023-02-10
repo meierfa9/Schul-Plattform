@@ -15,30 +15,27 @@
         </ion-toolbar>
       </ion-header>
       <ion-list>
-        <ion-item :key="aufgabe.identity" v-for="aufgabe in tasks">
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                {{ aufgabe.name }}
-              </ion-col>
-              <ion-col>
-                <ion-button
-                  color="danger"
-                  v-if="!aufgabe.done"
-                  @click="finishTask(aufgabe)">Offen</ion-button>
-            
-                <ion-button
-                  color="success"
-                  v-if="aufgabe.done"
-                  >Erledigt</ion-button
-                >
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
+        <div :key="aufgabe.id" v-for="aufgabe in tasks">
+          <ion-item v-if="!aufgabe.done">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  {{ aufgabe.name }}
+                </ion-col>
+                <ion-col>
+                  <ion-button color="danger" @click="finishTask(aufgabe)"
+                    >Offen</ion-button
+                  >
+
+                  <ion-button color="success" v-if="aufgabe.done"
+                    >Erledigt</ion-button
+                  >
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+        </div>
       </ion-list>
-      <ion-item>
-      </ion-item>
     </ion-content>
   </ion-page>
 </template>
@@ -62,8 +59,7 @@ import {
 import { useTasks } from "../composables/useAufgaben";
 import { useRoute } from "vue-router";
 
-const { newTask, tasks, getTasks, finishTask, /*addTask, archiveTask */} =
-  useTasks();
+const { tasks, finishTask /*addTask, archiveTask */ } = useTasks();
 
 const route = useRoute();
 const { fach } = route.params;

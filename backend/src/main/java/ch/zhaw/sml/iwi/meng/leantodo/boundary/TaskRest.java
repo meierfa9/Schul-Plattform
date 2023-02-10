@@ -38,7 +38,7 @@ public class TaskRest {
         Task persistedTask = taskRepository.save(newTask);
         return ResponseEntity
             .created(URI
-                     .create(String.format("/persons/%s", newTask.getIdentity())))
+                     .create(String.format("/persons/%s", newTask.getId())))
             .body(persistedTask);
     }
 
@@ -59,7 +59,7 @@ public class TaskRest {
         List<JSONObject> entities = new ArrayList<JSONObject>();
         for (Task n : tasks) {
             JSONObject entity = new JSONObject();
-            entity.put("id", n.getIdentity());
+            entity.put("id", n.getId());
             entity.put("name", n.getName());
             entity.put("description", n.getDescription());
             entity.put("done", n.getDone());
