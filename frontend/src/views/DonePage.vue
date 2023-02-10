@@ -15,7 +15,7 @@
           <ion-title size="large">Erledigte Aufgaben</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-list :key="aufgabe.name" v-for="aufgabe in tasks">
+      <ion-list :key="aufgabe.identity" v-for="aufgabe in tasksDone">
         <ion-item>
           <ion-grid>
             <ion-row>
@@ -26,11 +26,9 @@
                 <ion-button
                   color="danger"
                   v-if="!aufgabe.done"
-                  @click="finishTask(aufgabe)">Offen</ion-button>
-            
-                <ion-button
-                  color="success"
-                  v-if="aufgabe.done"
+                  >Offen</ion-button
+                >
+                <ion-button color="success" v-if="aufgabe.done"
                   >Erledigt</ion-button
                 >
               </ion-col>
@@ -57,6 +55,5 @@ import {
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 
-const { newTask, tasks, getTasks, finishTask, /*addTask, archiveTask */} =
-  useTasks();
+const { tasksDone /*addTask, archiveTask */ } = useTasks();
 </script>

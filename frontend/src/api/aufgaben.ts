@@ -16,6 +16,20 @@ export async function getAufgabe(){
     return response.data
 }
 
+export async function getDoneAufgabe(){
+    
+    const response = await axios.get(API_ROOT + '/api/tasks/true', config)
+    console.log(response.data)
+    return response.data
+}
+
+export async function getOpenAufgabe(){
+    
+    const response = await axios.get(API_ROOT + '/api/tasks/false', config)
+    console.log(response.data)
+    return response.data
+}
+
 export async function updateAufgabe(task: Aufgabe): Promise<any>   {
     const config = {        
         withCredentials: true
