@@ -17,20 +17,27 @@
 
       <ion-grid>
         <ion-row>
-          <ion-col v-for="fach in faecher" :key="fach.title" size-xs="12" size-md="6">
+          <ion-col v-for="fach in faecher" :key="fach.id" size-xs="12" size-md="6">
             <ion-card button :router-link="'/tabs/uebersicht/' + fach.title">
-              
+
               <img v-if="fach.title === 'Mathematik'" alt="Mathematik"
                 src="https://cdn-icons-png.flaticon.com/512/5012/5012407.png" />
               <img v-if="fach.title === 'Deutsch'" alt="Deutsch"
                 src="https://cdn-icons-png.flaticon.com/512/2112/2112025.png" />
               <img v-if="fach.title === 'Englisch'" alt="Englisch"
                 src="https://cdn-icons-png.flaticon.com/512/5238/5238411.png" />
-              <img v-if="fach.title === 'Französisch'" alt="Französisch"
+              <img v-if="fach.title === 'Franzoesisch'" alt="Franzoesisch"
                 src="https://cdn-icons-png.flaticon.com/512/8079/8079879.png" />
               <img v-if="fach.title === 'Natur Mensch Gesellschaft'" alt="Natur Mensch Gesellschaft"
                 src="https://cdn-icons-png.flaticon.com/512/9601/9601647.png" />
-
+              <img v-if="fach.title === 'Medien und Informatik'" alt="Medien und Informatik"
+                src="https://cdn-icons-png.flaticon.com/512/4089/4089948.png" />
+              <img v-if="fach.title === 'Gestalten'" alt="Gestalten"
+                src="https://cdn-icons-png.flaticon.com/512/1188/1188503.png" />
+              <img v-if="fach.title === 'Sport'" alt="Sport"
+                src="https://cdn-icons-png.flaticon.com/512/1198/1198314.png" />
+                <img v-if="fach.title === 'Musik'" alt="Musik"
+                src="https://cdn-icons-png.flaticon.com/512/3659/3659784.png" />
 
               <ion-card-header>
                 <ion-card-title>{{ fach.title }}</ion-card-title>
