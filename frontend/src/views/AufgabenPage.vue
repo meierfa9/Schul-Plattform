@@ -69,11 +69,11 @@ import {
   IonButton,
   IonInput,
 } from "@ionic/vue";
-import { useTodos } from "../composables/useAufgaben";
+import { useTasks } from "../composables/useAufgaben";
 import { useRoute } from "vue-router";
 
-const { newTodo, todos, getTodos, addTodo, finishTodo, archiveTodo } =
-  useTodos();
+const { newTask, tasks, getTasks, /*addTask, finishTask, archiveTask */} =
+  useTasks();
 
 const route = useRoute();
 const { fach } = route.params;

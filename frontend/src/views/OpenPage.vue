@@ -8,31 +8,29 @@
         <ion-title>Offene Aufgaben</ion-title>
       </ion-toolbar>
     </ion-header>
+
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Erledigte Aufgaben</ion-title>
+          <ion-title size="large">Offene Aufgaben</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-list>
-        <ion-item :key="todo.id" v-for="todo in todos">
+      <ion-list :key="aufgabe.name" v-for="aufgabe in tasks">
+        <ion-item>
           <ion-grid>
             <ion-row>
               <ion-col>
-                {{ todo.title }}
+                {{ aufgabe.name }}
               </ion-col>
               <ion-col>
                 <ion-button
                   color="danger"
-                  v-if="!todo.done && !todo.archived"
-                  @click="finishTodo(todo)"
-                  >Finish</ion-button
-                >
+                  v-if="!aufgabe.done"
+                  @click="finishTask(aufgabe)">Offen</ion-button>
                 <ion-button
                   color="success"
-                  v-if="todo.done && !todo.archived"
-                  @click="archiveTodo(todo)"
-                  >Archive</ion-button
+                  v-if="aufgabe.done"
+                  >Erledigt</ion-button
                 >
               </ion-col>
             </ion-row>
@@ -56,8 +54,8 @@ import {
   IonCol,
   IonCard,
 } from "@ionic/vue";
-import { useTodos } from "../composables/useAufgaben";
+import { useTasks } from "../composables/useAufgaben";
 
-const { newTodo, todos, getTodos, addTodo, finishTodo, archiveTodo } =
-  useTodos();
+const { newTask, tasks, getTasks, finishTask, /*addTask, archiveTask */} =
+  useTasks();
 </script>

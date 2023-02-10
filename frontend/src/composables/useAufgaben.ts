@@ -1,60 +1,61 @@
-import { getAllToDos, updateToDo, addNewToDo } from '@/api/aufgaben';
-import { Aufgaben } from '@/model/aufgaben';
+import axios from 'axios';
+import { getAufgabe, updateAufgabe, addNewAufgabe } from '@/api/aufgaben';
+import { Aufgabe } from '@/model/aufgaben';
 import { onMounted, ref } from 'vue';
 
-export function useTodos() {
+export function useTasks() {
 
-    const todos = ref<Aufgaben[]>([]);
+    const tasks = ref<Aufgabe[]>([]);
 
-    const newTodo = ref<Aufgaben>({});
+    const newTask = ref<Aufgabe>({});
 
-    const getTodos = async () => {
+    const getTasks = async () => {
         try {
-            todos.value = await getAllToDos();
+            tasks.value = await getAufgabe();
+            console.log(tasks)
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
-    const finishTodo = async (todo: Aufgaben) => {
+    const getDoneTasks = async () => {
         try {
-            todo.done = true;
-            updateToDo(todo);
+            tasks.value = await getAufgabe();
+            console.log(tasks)
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
-    const archiveTodo = async (todo: Aufgaben) => {
+   
+    const finishTask = async (task: Aufgabe) => {
         try {
-            todo.archived = true;
-            await updateToDo(todo);
-            getTodos();
+            task.done = true;
+            updateAufgabe(task);
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
-
-    const addTodo = async () => {
+ 
+    const addTask = async () => {
         try {
             // add the new todo and update the list of all todos afterwards
-            await addNewToDo(newTodo.value);
-            getTodos();
+            await addNewAufgabe(newTask.value);
+            getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
     }
 
     onMounted(() => {
-        getTodos();
+        getTasks();
     })
 
     return {
-        newTodo,
-        todos,
-        getTodos,
-        addTodo,
-        finishTodo,
-        archiveTodo
+        newTask,
+        tasks,
+        getTasks,
+        addTask,
+        finishTask,
     }
 }

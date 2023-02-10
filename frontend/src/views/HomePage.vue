@@ -15,6 +15,18 @@
       <ion-grid>
         <ion-row>
           <ion-col size-xs="12" size-md="6">
+            <ion-card button :router-link="'/tabs/open/'">
+              <img
+                alt="todo"
+                src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
+              />
+              <ion-card-header>
+                  <ion-card-title>Offene Aufgaben <ion-badge>Anzahl</ion-badge></ion-card-title>
+              </ion-card-header>
+
+            </ion-card>
+          </ion-col>
+          <ion-col size-xs="12" size-md="6">
             <ion-card button :router-link="'/tabs/done/'">
               <img
                 alt="done"
@@ -22,27 +34,21 @@
               
               />
               <ion-card-header>
-                <ion-card-title>Erledigte Aufgaben</ion-card-title>
+                <ion-card-title>Erledigte Aufgaben <ion-badge>Anzahl</ion-badge></ion-card-title>
+
               </ion-card-header>
 
-              <ion-card-content>Erledigte Aufgaben
-                <ion-badge>Anzahl</ion-badge>
-              </ion-card-content>
+    
             </ion-card>
           </ion-col>
           <ion-col size-xs="12" size-md="6">
-            <ion-card button :router-link="'/tabs/open/'">
-              <img
-                alt="todo"
-                src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
-              />
+            <ion-card button :router-link="'/tabs/new/'">
+             
               <ion-card-header>
-                <ion-card-title>Offene Aufgaben</ion-card-title>
+                <ion-card-title>Aufgabe hinzufügen</ion-card-title>
               </ion-card-header>
 
-              <ion-card-content>Offene Aufgaben
-                <ion-badge>Anzahl</ion-badge>
-              </ion-card-content>
+        
             </ion-card>
           </ion-col>
         </ion-row>
