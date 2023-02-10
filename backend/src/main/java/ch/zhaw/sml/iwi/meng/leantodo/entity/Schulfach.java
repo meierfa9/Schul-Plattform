@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +24,11 @@ public class Schulfach {
     private String title;
 
     @ManyToMany
+    @JsonUnwrapped
     private List<Teacher> teacher = new ArrayList<>();
 
     @ManyToMany
+    @JsonUnwrapped
     private List<Student> student = new ArrayList<>();
 
 }

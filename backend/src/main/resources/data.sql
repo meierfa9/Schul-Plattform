@@ -42,13 +42,13 @@ INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Singen','Übe 1
 
 
 
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, NAME,  SURNAME, KLASSE) VALUES ('Student', 'meierfa9','Meier',  'Fabio', 'TZA');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, NAME,  SURNAME, KLASSE) VALUES ('Student', 'mettlanj','Mettler',  'Anja', 'TZA');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, NAME, SURNAME, KLASSE) VALUES ('Student', 'beckema2','Becker',  'Marcel', 'TZB');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME,  SURNAME, KLASSE) VALUES ('Student', 'meierfa9','Student','Meier',  'Fabio', 'TZA');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME,  SURNAME, KLASSE) VALUES ('Student', 'mettlanj','Student','Mettler',  'Anja', 'TZA');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, KLASSE) VALUES ('Student', 'beckema2','Student','Becker',  'Marcel', 'TZB');
 
 
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, NAME,  SURNAME, EMAIL) VALUES ('Teacher', 'meix','Meisterhans',  'Max', 'meix@zhaw.ch');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, NAME, SURNAME, EMAIL) VALUES ('Teacher', 'heip','Heinrich', 'Peter', 'heip@zhaw.ch');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME,  SURNAME, EMAIL) VALUES ('Teacher', 'meix','Teacher','Meisterhans',  'Max', 'meix@zhaw.ch');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, EMAIL) VALUES ('Teacher', 'heip','Teacher','Heinrich', 'Peter', 'heip@zhaw.ch');
 
 
 INSERT INTO SCHULFACH_STUDENT (SCHULFACH_ID, STUDENT_USER_NAME) VALUES (1,'meierfa9');
