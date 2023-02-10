@@ -37,6 +37,10 @@ const routes: Array<RouteRecordRaw> = [
         path: 'open',
         component: () => import('@/views/OpenPage.vue')
       },
+      {
+        path: 'new',
+        component: () => import('@/views/NewPage.vue')
+      },
     ]
   }
 ]

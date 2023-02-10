@@ -39,7 +39,9 @@ INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Ausdauer','Geh 
 INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Kraft','Mach 10 Liegestützen.', false,8);
 INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Notenlesen','Löse das Arbeitsblatt zum Notenlesen.', false,9);
 INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Singen','Übe 15 Minuten das Lied Wind of Change', false,9);
-
+INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Bla','blabla', true,9);
+INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Test','testtesttest', true,1);
+INSERT INTO TASK (name,description, done, SCHULFACH_ID) VALUES ('Beispiel','beispielbeispielbeispiel', true,5);
 
 
 INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME,  SURNAME, KLASSE) VALUES ('Student', 'meierfa9','Student','Meier',  'Fabio', 'TZA');

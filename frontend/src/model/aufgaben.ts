@@ -1,6 +1,6 @@
-export interface Aufgaben {
+export interface Aufgabe {
     id?: number;
-    title?: string;
-    archived?: boolean;
+    name?: String;
+    description?: String;
     done?: boolean;
 }
