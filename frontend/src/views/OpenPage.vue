@@ -15,7 +15,7 @@
           <ion-title size="large">Offene Aufgaben</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-list :key="aufgabe.name" v-for="aufgabe in tasks">
+      <ion-list :key="aufgabe.identity" v-for="aufgabe in tasksOpen">
         <ion-item>
           <ion-grid>
             <ion-row>
@@ -33,6 +33,7 @@
                   >Erledigt</ion-button
                 >
               </ion-col>
+
             </ion-row>
           </ion-grid>
         </ion-item>
@@ -56,6 +57,6 @@ import {
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 
-const { newTask, tasks, getTasks, finishTask, /*addTask, archiveTask */} =
+const { tasksOpen, finishTask, /*addTask, archiveTask */} =
   useTasks();
 </script>

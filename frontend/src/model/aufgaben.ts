@@ -1,5 +1,5 @@
 export interface Aufgabe {
-    id?: number;
+    identity?: number;
     name?: String;
     description?: String;
     done?: boolean;
