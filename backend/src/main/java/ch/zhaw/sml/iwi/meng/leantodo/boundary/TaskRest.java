@@ -51,6 +51,29 @@ public class TaskRest {
         return current;
 
     }
+    @GetMapping(path = "/api/tasks/{done}")
+    public ResponseEntity<Object> getPersonsbyHumanType(@PathVariable("done") Boolean done) {
+        List<Task> tasks = new ArrayList<>();
+        tasks = taskRepository.findByDone(done);
+
+        List<JSONObject> entities = new ArrayList<JSONObject>();
+        for (Task n : tasks) {
+            JSONObject entity = new JSONObject();
+            entity.put("id", n.getId());
+            entity.put("name", n.getName());
+            entity.put("description", n.getDescription());
+            entity.put("done", n.getDone());
+            entity.put("schulfach", n.getSchulfach());
+            entities.add(entity);
+        }
+
+        if (tasks.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<Object>(entities, HttpStatus.OK);
+        }
+
+    }
     /*
     @GetMapping(path = "/api/Tasks/{schulfach}")
     public ResponseEntity<Object> getPersonsbyHumanType(@PathVariable("schulfach") Object schulfach) {

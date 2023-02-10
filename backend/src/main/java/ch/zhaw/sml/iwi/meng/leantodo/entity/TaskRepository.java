@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface TaskRepository extends JpaRepository<Task, Long>{
 
     //List<Task> findByFach(Object schulfach);
-   
+    List<Task> findByDone(Boolean done);
 }
