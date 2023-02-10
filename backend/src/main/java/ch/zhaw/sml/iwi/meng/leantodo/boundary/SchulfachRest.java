@@ -16,7 +16,7 @@ public class SchulfachRest {
     private SchulfachRepository schulRepository;
 
     @GetMapping(path="/api/schulfaecher")
-    public List<Schulfach> listAllTrips() {
+    public List<Schulfach> listAllSchulfaecher() {
         return schulRepository.findAll();
     }
 
