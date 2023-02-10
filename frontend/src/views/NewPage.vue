@@ -36,7 +36,18 @@
             </ion-row>
           </ion-grid>
           </ion-item>
-          
+          <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-text>Schulfach der Aufgabe</ion-text>
+            </ion-row>
+            <ion-row>
+              <ion-select type="text" placeholder="Beschreibung" v-model="newTask.Schulfach">
+                <ion-select-option :key="fach.id" v-for="fach in faecher">{{ fach.title }}</ion-select-option>
+              </ion-select>
+            </ion-row>
+          </ion-grid>
+          </ion-item>
       </ion-list>
       <div padding>
         <ion-button @click="addTask()">Aufgabe hinzufügen</ion-button>
@@ -59,9 +70,14 @@ import {
   IonCard,
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
+import { useFaecher } from "../composables/useFaecher";
 
-const { newTask, tasks, getTasks, addTask, finishTask} =
+
+const { tasks, newTask, addTask, finishTask} =
   useTasks();
+
+const { faecher, lehrer } = useFaecher();
+
 </script>
 
 <style>

@@ -9,7 +9,7 @@ export function useTasks() {
     const tasksDone = ref<any>([]);
     const tasksOpen = ref<any>([]);
 
-    //const newTask = ref<Aufgabe>([]);
+    const newTask = ref<any>([]);
     
     const getTasks = async () => {
         try {
@@ -48,7 +48,7 @@ export function useTasks() {
             console.log(error); // FIXME: Errorhandling
         }
     }
-/*
+
     //POST-REQUEST Neue Aufgabe
     const addTask = async () => {
         try {
@@ -58,7 +58,7 @@ export function useTasks() {
         } catch (error) {
             console.log(error); // FIXME: Errorhandling
         }
-    }*/
+    }
 
     onMounted(() => {
         getTasks();
@@ -67,11 +67,11 @@ export function useTasks() {
     })
 
     return {
-        //newTask,
+        newTask,
         tasks,
         tasksDone,
         tasksOpen,
-        //addTask,
+        addTask,
         finishTask,
     }
 }

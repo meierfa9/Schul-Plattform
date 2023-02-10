@@ -41,6 +41,7 @@
 </template>
   
   <script setup lang="ts">
+
 import {
   IonBackButton,
   IonPage,
@@ -60,10 +61,12 @@ import { useTasks } from "../composables/useAufgaben";
 import { useRoute } from "vue-router";
 import { useFaecher } from "../composables/useFaecher";
 
+
 const { tasks, finishTask /*addTask, archiveTask */ } = useTasks();
 
 const { faecher, lehrer } = useFaecher();
 
 const route = useRoute();
 const { fach } = route.params;
+
 </script>

@@ -28,8 +28,8 @@
                   v-if="!aufgabe.done"
                   >Offen</ion-button
                 >
-                <ion-button color="success" v-if="aufgabe.done"
-                  >Erledigt</ion-button
+                <ion-badge color="success" v-if="aufgabe.done"
+                  >Erledigt</ion-badge
                 >
               </ion-col>
             </ion-row>
@@ -52,8 +52,23 @@ import {
   IonRow,
   IonCol,
   IonCard,
+  IonBadge,
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 
 const { tasksDone /*addTask, archiveTask */ } = useTasks();
 </script>
+
+<style scoped>
+
+ion-badge {
+  font-weight: 2;
+  font-size: 10pt;
+  text-transform:uppercase;
+  text-align: center;
+  padding-block-start: 6px;
+  background-color: success;
+  height:25px;
+  width: 85px;
+}
+</style>

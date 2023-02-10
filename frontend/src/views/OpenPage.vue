@@ -15,7 +15,7 @@
           <ion-title size="large">Offene Aufgaben</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-list :key="aufgabe.identity" v-for="aufgabe in tasksOpen">
+      <ion-list :key="aufgabe.id" v-for="aufgabe in tasksOpen">
         <ion-item>
           <ion-grid>
             <ion-row>
