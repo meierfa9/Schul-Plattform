@@ -41,8 +41,8 @@
 
               <ion-card-header>
                 <ion-card-title>{{ fach.title }}</ion-card-title>
-                <div v-for="lehrperson in lehrer" :key="lehrperson">
-                  <ion-card-subtitle v-if="fach.title === lehrperson.faech">{{ lehrperson.name }}</ion-card-subtitle>
+                <div>
+                  <ion-card-subtitle>{{ fach.teacher?.name +' '+ fach.teacher?.surname }}</ion-card-subtitle>
                 </div>
               </ion-card-header>
 

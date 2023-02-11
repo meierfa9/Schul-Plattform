@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
@@ -23,9 +24,8 @@ public class Schulfach {
 
     private String title;
 
-    @ManyToMany
-    @JsonUnwrapped
-    private List<Teacher> teacher = new ArrayList<>();
+    @ManyToOne
+    private Teacher teacher;
 
     @ManyToMany
     @JsonUnwrapped

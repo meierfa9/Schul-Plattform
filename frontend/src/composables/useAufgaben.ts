@@ -9,7 +9,7 @@ export function useTasks() {
     const tasksDone = ref<any>([]);
     const tasksOpen = ref<any>([]);
 
-    const newTask = ref<any>([]);
+    const newTask = ref<Aufgabe>({});
     
     const getTasks = async () => {
         try {
@@ -54,6 +54,7 @@ export function useTasks() {
         try {
             // add the new todo and update the list of all todos afterwards
             await addNewAufgabe(newTask.value);
+            console.log(newTask)
             getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling

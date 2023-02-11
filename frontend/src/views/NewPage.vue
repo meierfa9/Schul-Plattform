@@ -42,7 +42,7 @@
               <ion-text>Schulfach der Aufgabe</ion-text>
             </ion-row>
             <ion-row>
-              <ion-select type="text" placeholder="Beschreibung" v-model="newTask.Schulfach">
+              <ion-select type="text" placeholder="Beschreibung" v-model="newTask.schulfach">
                 <ion-select-option :key="fach.id" v-for="fach in faecher">{{ fach.title }}</ion-select-option>
               </ion-select>
             </ion-row>
