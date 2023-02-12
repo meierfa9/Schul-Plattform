@@ -12,7 +12,7 @@
       <div class="container">
         <ion-card class="card">
           <ion-card-header class="header">
-            <ion-card-title>neue Aufgabe
+            <ion-card-title>Neue Aufgabe
               <img class="new" alt="logo" src="https://cdn-icons-png.flaticon.com/512/891/891509.png" />
             </ion-card-title>
           </ion-card-header>
@@ -23,7 +23,7 @@
                   <ion-row>
                     <ion-text>
                       <img class="icon" alt="logo" src="https://cdn-icons-png.flaticon.com/512/2799/2799932.png" />
-                      Titel der Aufgabe</ion-text>
+                      Titel</ion-text>
                   </ion-row>
                   <ion-row>
                     <ion-input type="text" placeholder="Titel" v-model="newTask.name"></ion-input>
@@ -35,7 +35,7 @@
                   <ion-row>
                     <ion-text>
                       <img class="icon" alt="logo" src="https://cdn-icons-png.flaticon.com/512/5107/5107639.png" />
-                      Beschreibung der Aufgabe</ion-text>
+                      Beschreibung</ion-text>
                   </ion-row>
                   <ion-row>
                     <ion-input type="text" placeholder="Beschreibung" v-model="newTask.description"></ion-input>
@@ -47,7 +47,7 @@
                   <ion-row>
                     <ion-text>
                       <img class="icon" alt="logo" src="https://cdn-icons-png.flaticon.com/128/8895/8895467.png" />
-                      Schulfach der Aufgabe</ion-text>
+                      Schulfach</ion-text>
                   </ion-row>
                   <ion-row>
                     <ion-select type="number" placeholder="Beschreibung" v-model="newTask.title">
@@ -58,7 +58,7 @@
               </ion-item>
             </ion-list>
           </ion-card-content>
-          <ion-button @click="addTask()">Aufgabe hinzufügen</ion-button>
+          <ion-button @click="addTask">Click Me</ion-button>
         </ion-card>
       </div>
     </ion-content>
@@ -81,7 +81,8 @@ import {
   IonCard,
   IonInput,
   IonSelect,
-  IonSelectOption
+  IonSelectOption,
+  alertController
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 import { useFaecher } from "../composables/useFaecher";
@@ -91,6 +92,9 @@ const { tasks, newTask, addTask, finishTask } =
   useTasks();
 
 const { faecher, lehrer } = useFaecher();
+
+
+
 
 </script>
 
