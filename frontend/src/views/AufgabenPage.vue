@@ -14,17 +14,7 @@
           <ion-title size="large">{{ fach }}</ion-title>
         </ion-toolbar>
       </ion-header>
-
-      <ion-list>
-        <ion-item>
-          <ion-label class="label">
-            <img class="labelimg" alt="todo" src="https://cdn-icons-png.flaticon.com/512/2387/2387757.png" />
-            offene Aufgaben</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-      </ion-list>
-
-      
+     
       <div v-for="aufgabe in tasks" :key="aufgabe.id">
         <ion-card v-if="aufgabe.title === fach && !aufgabe.done">
           <ion-card-header>
@@ -58,15 +48,13 @@ import {
   IonButton,
   IonInput,
 } from "@ionic/vue";
+
 import { useTasks } from "../composables/useAufgaben";
 import { useRoute } from "vue-router";
 import { useFaecher } from "../composables/useFaecher";
 
-
-const { tasks, finishTask, /*addTask, archiveTask */ } = useTasks();
-
+const { tasks, finishTask } = useTasks();
 const { faecher, lehrer } = useFaecher();
-
 const route = useRoute();
 const { fach } = route.params;
 

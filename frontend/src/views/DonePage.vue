@@ -10,14 +10,6 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <ion-list>
-        <ion-item>
-          <ion-label class="label">
-            erledigte Aufgaben</ion-label><img class="labelimg" alt="done"
-            src="https://cdn-icons-png.flaticon.com/512/1442/1442912.png" />
-          <ion-input></ion-input>
-        </ion-item>
-      </ion-list>
 
       <div v-for="aufgabe in tasksDone" :key="aufgabe.id">
         <ion-card class="card">
@@ -49,7 +41,7 @@ import {
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 
-const { tasksDone /*addTask, archiveTask */ } = useTasks();
+const { tasksDone } = useTasks();
 </script>
 
 <style scoped>

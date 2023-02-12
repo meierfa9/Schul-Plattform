@@ -9,26 +9,29 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-list>
-        <ion-item>
-          <ion-label class="label">
-            offene Aufgaben</ion-label><img class="labelimg" alt="todo" src="https://cdn-icons-png.flaticon.com/512/2387/2387757.png" />
-          <ion-input></ion-input>
-        </ion-item>
-      </ion-list>
+      <ion-label class="label">
+        offene Aufgaben</ion-label><img class="labelimg" alt="todo"
+        src="https://cdn-icons-png.flaticon.com/512/2387/2387757.png" />
+      <ion-input></ion-input>
+      <ion-content :fullscreen="true">
+        <ion-header collapse="condense">
+          <ion-toolbar>
+            <ion-title size="large">Offene Aufgaben</ion-title>
+          </ion-toolbar>
+        </ion-header>
 
-      <div v-for="aufgabe in tasksOpen" :key="aufgabe.id">
-        <ion-card class="card">
-          <ion-card-header>
-            <ion-card-title>{{ aufgabe.name }}
-              <ion-button class="open" @click="finishTask(aufgabe)">Offen</ion-button>
-              <ion-button class="done" v-if="aufgabe.done">Erledigt</ion-button>
-            </ion-card-title>
-            <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </div>
-
+        <div v-for="aufgabe in tasksOpen" :key="aufgabe.id">
+          <ion-card class="card">
+            <ion-card-header>
+              <ion-card-title>{{ aufgabe.name }}
+                <ion-button class="open" @click="finishTask(aufgabe)">Offen</ion-button>
+                <ion-button class="done" v-if="aufgabe.done">Erledigt</ion-button>
+              </ion-card-title>
+              <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-content>
     </ion-content>
   </ion-page>
 </template>
@@ -45,11 +48,21 @@ import {
   IonRow,
   IonCol,
   IonCard,
+  IonItem,
+  IonList
 } from "@ionic/vue";
-import { useTasks } from "../composables/useAufgaben";
 
 const { tasksOpen, finishTask, /*addTask, archiveTask */ } =
   useTasks();
+import { useTasks } from "../composables/useAufgaben";
+import { useRoute } from "vue-router";
+import { useFaecher } from "../composables/useFaecher";
+
+const { tasks, finishTask } = useTasks();
+const { faecher, lehrer } = useFaecher();
+const route = useRoute();
+const { fach } = route.params;
+
 </script>
 
 <style scope>
