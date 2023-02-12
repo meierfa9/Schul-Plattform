@@ -25,8 +25,8 @@
               <ion-input type="text" placeholder="Titel" v-model="newTask.name"></ion-input>
             </ion-row>
           </ion-grid>
-          </ion-item>
-          <ion-item>
+        </ion-item>
+        <ion-item>
           <ion-grid>
             <ion-row>
               <ion-text>Beschreibung der Aufgabe</ion-text>
@@ -35,8 +35,8 @@
               <ion-input type="text" placeholder="Beschreibung" v-model="newTask.description"></ion-input>
             </ion-row>
           </ion-grid>
-          </ion-item>
-          <ion-item>
+        </ion-item>
+        <ion-item>
           <ion-grid>
             <ion-row>
               <ion-text>Schulfach der Aufgabe</ion-text>
@@ -47,7 +47,7 @@
               </ion-select>
             </ion-row>
           </ion-grid>
-          </ion-item>
+        </ion-item>
       </ion-list>
       <div padding>
         <ion-button @click="addTask()">Aufgabe hinzufügen</ion-button>
@@ -58,6 +58,15 @@
 
 <script setup lang="ts">
 import {
+  IonBadge,
+  IonInput,
+  IonSelect,
+  IonList,
+  IonContent,
+  IonButtons,
+  IonText,
+  IonItem,
+  IonSelectOption,
   IonBackButton,
   IonPage,
   IonHeader,
@@ -73,7 +82,7 @@ import { useTasks } from "../composables/useAufgaben";
 import { useFaecher } from "../composables/useFaecher";
 
 
-const { tasks, newTask, addTask, finishTask} =
+const { tasks, newTask, addTask, finishTask } =
   useTasks();
 
 const { faecher, lehrer } = useFaecher();
@@ -81,7 +90,7 @@ const { faecher, lehrer } = useFaecher();
 </script>
 
 <style>
-  ion-textarea {
+ion-textarea {
   background-color: lightgrey;
   color: black;
 }
