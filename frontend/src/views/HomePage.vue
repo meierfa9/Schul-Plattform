@@ -21,7 +21,7 @@
                 src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
               />
               <ion-card-header>
-                  <ion-card-title>Offene Aufgaben <ion-badge>Anzahl</ion-badge></ion-card-title>
+                  <ion-card-title>Offene Aufgaben <ion-badge> Anzahl: {{ tasksOpen.length }}</ion-badge></ion-card-title>
               </ion-card-header>
 
             </ion-card>
@@ -34,7 +34,7 @@
               
               />
               <ion-card-header>
-                <ion-card-title>Erledigte Aufgaben <ion-badge>Anzahl</ion-badge></ion-card-title>
+                <ion-card-title>Erledigte Aufgaben <ion-badge>Anzahl: {{ tasksDone.length }}</ion-badge></ion-card-title>
 
               </ion-card-header>
 
@@ -77,7 +77,10 @@ import {
   IonButton,
   IonInput,
 } from "@ionic/vue";
+import { key } from "ionicons/icons";
 import { useRoute } from "vue-router";
+import { useTasks } from "../composables/useAufgaben";
+const { tasks, finishTask, tasksDone, tasksOpen, /*addTask, archiveTask */ } = useTasks();
 
 </script>
 

@@ -62,7 +62,7 @@ import { useRoute } from "vue-router";
 import { useFaecher } from "../composables/useFaecher";
 
 
-const { tasks, finishTask /*addTask, archiveTask */ } = useTasks();
+const { tasks, finishTask, /*addTask, archiveTask */ } = useTasks();
 
 const { faecher, lehrer } = useFaecher();
 

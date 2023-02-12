@@ -17,7 +17,7 @@
 
       <ion-grid>
         <ion-row>
-          <ion-col v-for="fach in faecher" :key="fach.id" size-xs="12" size-md="6">
+          <ion-col v-for="fach in faecher" :key="fach.title" size-xs="12" size-md="6">
             <ion-card button :router-link="'/tabs/uebersicht/' + fach.title">
 
               <img v-if="fach.title === 'Mathematik'" alt="Mathematik"
@@ -46,9 +46,7 @@
                 </div>
               </ion-card-header>
 
-              <ion-card-content> Offene Aufgaben
-                <ion-badge>Anzahl</ion-badge>
-              </ion-card-content>
+              
             </ion-card>
           </ion-col>
         </ion-row>
