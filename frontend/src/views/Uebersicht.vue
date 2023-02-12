@@ -43,7 +43,19 @@
                 <ion-card-title>{{ fach.title }}</ion-card-title>
                 <div>
                   <ion-card-subtitle>{{ fach.teacher?.name +' '+ fach.teacher?.surname }}</ion-card-subtitle>
+
+
                 </div>
+                <ion-card-header>
+                <ion-card-title> Offene Aufgaben 
+                  <div v-for="open in tasksOpen" :key="open.id" size-xs="12" size-md="6">
+                  <ion-badge v-if="fach.title === open.schulfach.title"> Anzahl: {{ open.schulfach.title.length }}</ion-badge>
+                 </div>
+
+
+                </ion-card-title>
+             
+              </ion-card-header>
               </ion-card-header>
 
               
@@ -78,7 +90,8 @@ import {
   IonInput,
 } from "@ionic/vue";
 import { useFaecher } from "../composables/useFaecher";
-
+import { useTasks } from "../composables/useAufgaben";
+const { tasks, finishTask, tasksDone, tasksOpen, /*addTask, archiveTask */ } = useTasks();
 const { faecher, lehrer } = useFaecher();
 </script>
 <style scoped>
@@ -96,7 +109,7 @@ ion-card:hover {
 ion-badge {
   float: right;
   font-size: 15pt;
-  background-color: red;
+  background-color: rgb(255, 83, 83);
 }
 
 img {
