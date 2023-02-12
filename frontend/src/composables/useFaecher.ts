@@ -14,13 +14,9 @@ export function useFaecher() {
         console.log(faecher)      
     }
 
-    const getLehrer =async () => {
-        lehrer.value = [{name: "Peter Müller", faech: "Mathematik"}, {name: "Ferdi Pfoste", faech: "Deutsch"}]        
-    }
-
+    
     onMounted(() => {
         getFaecher();
-        getLehrer();
     })
 
     return {

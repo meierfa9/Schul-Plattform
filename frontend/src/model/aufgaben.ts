@@ -4,7 +4,7 @@ export interface Aufgabe {
     description?: String;
     done?: boolean;
     schulfach?: {
-        id: number;
-        title: String;
+        id?: number;
+        title?: String;
     }
 }

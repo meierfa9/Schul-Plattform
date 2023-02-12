@@ -25,8 +25,8 @@
               <ion-input type="text" placeholder="Titel" v-model="newTask.name"></ion-input>
             </ion-row>
           </ion-grid>
-        </ion-item>
-        <ion-item>
+          </ion-item>
+          <ion-item>
           <ion-grid>
             <ion-row>
               <ion-text>Beschreibung der Aufgabe</ion-text>
@@ -35,19 +35,31 @@
               <ion-input type="text" placeholder="Beschreibung" v-model="newTask.description"></ion-input>
             </ion-row>
           </ion-grid>
-        </ion-item>
-        <ion-item>
+          </ion-item>
+          <ion-item>
           <ion-grid>
             <ion-row>
-              <ion-text>Schulfach der Aufgabe</ion-text>
+              <ion-text>Status der Aufgabe</ion-text>
             </ion-row>
             <ion-row>
-              <ion-select type="text" placeholder="Beschreibung" v-model="newTask.schulfach">
-                <ion-select-option :key="fach.id" v-for="fach in faecher">{{ fach.title }}</ion-select-option>
-              </ion-select>
+              <ion-input type="text" placeholder="Status" v-model="newTask.done"></ion-input>
             </ion-row>
           </ion-grid>
-        </ion-item>
+          </ion-item>
+          <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-text>Status der Aufgabe</ion-text>
+            </ion-row>
+            <ion-row>
+              <ion-input type="text" placeholder="Status" v-model="newTask.schulfach"></ion-input>
+            </ion-row>
+          </ion-grid>
+          </ion-item>
+         
+
+
+          
       </ion-list>
       <div padding>
         <ion-button @click="addTask()">Aufgabe hinzufügen</ion-button>
@@ -58,15 +70,6 @@
 
 <script setup lang="ts">
 import {
-  IonBadge,
-  IonInput,
-  IonSelect,
-  IonList,
-  IonContent,
-  IonButtons,
-  IonText,
-  IonItem,
-  IonSelectOption,
   IonBackButton,
   IonPage,
   IonHeader,
@@ -77,12 +80,15 @@ import {
   IonRow,
   IonCol,
   IonCard,
+  IonInput,
+  IonSelect,
+  IonSelectOption
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 import { useFaecher } from "../composables/useFaecher";
 
 
-const { tasks, newTask, addTask, finishTask } =
+const { tasks, newTask, addTask, finishTask} =
   useTasks();
 
 const { faecher, lehrer } = useFaecher();
@@ -90,7 +96,7 @@ const { faecher, lehrer } = useFaecher();
 </script>
 
 <style>
-ion-textarea {
+  ion-textarea {
   background-color: lightgrey;
   color: black;
 }
