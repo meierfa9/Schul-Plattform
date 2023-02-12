@@ -16,7 +16,7 @@
       </ion-header>
       <ion-list>
         <div :key="aufgabe.id" v-for="aufgabe in tasks">
-          <ion-item v-if="aufgabe.schulfach?.title === fach && !aufgabe.done ">
+          <ion-item v-if="aufgabe.title === fach && !aufgabe.done ">
             <ion-grid>
               <ion-row>
                 <ion-col>

@@ -26,7 +26,7 @@ public class Task {
 
     
     @ManyToOne
-    //@JsonUnwrapped
+    @JsonUnwrapped
     private Schulfach schulfach;
     
     

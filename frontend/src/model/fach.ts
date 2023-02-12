@@ -1,5 +1,4 @@
-export interface Fach {
-    id?: number, 
+export interface Fach { 
     title?: String,
     teacher?: {
         type?: String,
