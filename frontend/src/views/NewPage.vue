@@ -106,7 +106,7 @@ ion-textarea {
 
 .new {
   display: right;
-  width: 5%;
+  width: 4%;
   position: absolute;
         right: 20px;
 }

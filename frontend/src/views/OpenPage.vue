@@ -107,6 +107,6 @@ const { tasks, tasksOpen, finishTask, /*addTask, archiveTask */ } =
   width: 2%;
   position: absolute;
   left: 200px;
-  top: 7px;
+  top: 4px;
 }
 </style>

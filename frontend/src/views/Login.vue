@@ -75,7 +75,7 @@ img {
   display: right;
   width: 5%;
   position: absolute;
-        top: 10px;
+        top: 5px;
         right: 20px;
 }
 

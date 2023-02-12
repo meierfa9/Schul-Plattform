@@ -93,6 +93,6 @@ ion-badge {
   width: 2%;
   position: absolute;
   left: 200px;
-  top: 8px;
+  top: 4px;
 }
 </style>

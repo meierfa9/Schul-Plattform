@@ -103,7 +103,7 @@ ion-badge {
 .newtask {
   position: absolute;
   left: 60px;
-  top: 20px;
+  top: 24px;
   font-size: 20px;
 }
 </style>
