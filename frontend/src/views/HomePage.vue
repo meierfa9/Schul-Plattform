@@ -16,42 +16,37 @@
         <ion-row>
           <ion-col size-xs="12" size-md="6">
             <ion-card button :router-link="'/tabs/open/'">
-              <img
-                alt="todo"
-                src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
-              />
+              <img class="tasks" alt="todo" src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png" />
               <ion-card-header>
-                  <ion-card-title>Offene Aufgaben <ion-badge> Anzahl: {{ tasksOpen.length }}</ion-badge></ion-card-title>
+                <ion-card-title>Offene Aufgaben <ion-badge> Anzahl: {{ tasksOpen.length }}</ion-badge></ion-card-title>
               </ion-card-header>
 
             </ion-card>
           </ion-col>
           <ion-col size-xs="12" size-md="6">
             <ion-card button :router-link="'/tabs/done/'">
-              <img
-                alt="done"
-                src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png"
-              
-              />
+              <img class="tasks" alt="done" src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png" />
               <ion-card-header>
-                <ion-card-title>Erledigte Aufgaben <ion-badge>Anzahl: {{ tasksDone.length }}</ion-badge></ion-card-title>
+                <ion-card-title>Erledigte Aufgaben <ion-badge>Anzahl: {{
+                  tasksDone.length
+                }}</ion-badge></ion-card-title>
 
               </ion-card-header>
 
-    
-            </ion-card>
-          </ion-col>
-          <ion-col size-xs="12" size-md="6">
-            <ion-card button :router-link="'/tabs/new/'">
-             
-              <ion-card-header>
-                <ion-card-title>Aufgabe hinzufügen</ion-card-title>
-              </ion-card-header>
 
-        
             </ion-card>
           </ion-col>
+          <ion-col>
+            <img class="icon" alt="done" src="https://cdn-icons-png.flaticon.com/512/2311/2311991.png" />
+            <ion-button class="newtask" button :router-link="'/tabs/new/'" fill="clear">
+
+              + neue Aufgabe hinzufügen</ion-button>
+
+
+          </ion-col>
+
         </ion-row>
+
       </ion-grid>
     </ion-content>
   </ion-page>
@@ -85,6 +80,9 @@ const { tasks, finishTask, tasksDone, tasksOpen, /*addTask, archiveTask */ } = u
 </script>
 
 <style scoped>
+ion-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.503);
+}
 
 ion-card:hover {
   background-color: lightgrey;
@@ -94,13 +92,27 @@ ion-card:hover {
 ion-badge {
   float: right;
   font-size: 15pt;
-  background-color: red;
+  background-color: rgb(255, 83, 83);
 }
 
-img {
+.tasks {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.icon {
+  width: 3%;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.newtask {
+  position: absolute;
+  left: 60px;
+  top: 20px;
+  font-size: 20px;
 }
 </style>
