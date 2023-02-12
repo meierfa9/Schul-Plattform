@@ -9,10 +9,14 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
+    <ion-item>
       <ion-label class="label">
-        offene Aufgaben</ion-label><img class="labelimg" alt="todo"
+        offene Aufgaben</ion-label>
+        <img class="labelimg" alt="todo"
         src="https://cdn-icons-png.flaticon.com/512/2387/2387757.png" />
       <ion-input></ion-input>
+    </ion-item>
+
       <ion-content :fullscreen="true">
         <ion-header collapse="condense">
           <ion-toolbar>
@@ -51,17 +55,9 @@ import {
   IonItem,
   IonList
 } from "@ionic/vue";
-
-const { tasksOpen, finishTask, /*addTask, archiveTask */ } =
-  useTasks();
 import { useTasks } from "../composables/useAufgaben";
-import { useRoute } from "vue-router";
-import { useFaecher } from "../composables/useFaecher";
-
-const { tasks, finishTask } = useTasks();
-const { faecher, lehrer } = useFaecher();
-const route = useRoute();
-const { fach } = route.params;
+const { tasks, tasksOpen, finishTask, /*addTask, archiveTask */ } =
+  useTasks();
 
 </script>
 
@@ -111,6 +107,6 @@ const { fach } = route.params;
   width: 2%;
   position: absolute;
   left: 200px;
-  top: 5px;
+  top: 7px;
 }
 </style>

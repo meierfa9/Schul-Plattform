@@ -9,6 +9,14 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
+      <ion-item>
+      <ion-label class="label">
+        offene Aufgaben</ion-label>
+        <img class="labelimg" alt="todo"
+        src="https://cdn-icons-png.flaticon.com/512/2387/2387757.png" />
+      <ion-input></ion-input>
+    </ion-item>
+
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">{{ fach }}</ion-title>

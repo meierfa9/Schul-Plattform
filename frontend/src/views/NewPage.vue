@@ -58,7 +58,7 @@
               </ion-item>
             </ion-list>
           </ion-card-content>
-          <ion-button @click="addTask">Click Me</ion-button>
+          <ion-button @click="addTask">Hinzufügen</ion-button>
         </ion-card>
       </div>
     </ion-content>

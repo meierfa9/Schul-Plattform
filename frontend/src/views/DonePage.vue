@@ -11,6 +11,14 @@
 
     <ion-content :fullscreen="true">
 
+      <ion-item>
+      <ion-label class="label">
+        erledigte Aufgaben</ion-label>
+        <img class="labelimg" alt="todo"
+        src="https://cdn-icons-png.flaticon.com/512/1442/1442912.png" />
+      <ion-input></ion-input>
+    </ion-item>
+
       <div v-for="aufgabe in tasksDone" :key="aufgabe.id">
         <ion-card class="card">
           <ion-card-header>
@@ -85,6 +93,6 @@ ion-badge {
   width: 2%;
   position: absolute;
   left: 200px;
-  top: 5px;
+  top: 8px;
 }
 </style>
