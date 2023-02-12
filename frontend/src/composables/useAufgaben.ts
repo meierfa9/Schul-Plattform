@@ -52,6 +52,7 @@ export function useTasks() {
     //POST-REQUEST Neue Aufgabe
     const addTask = async (task: Aufgabe) => {
         try {
+            newTask.value.done = false;
             // add the new todo and update the list of all todos afterwards
             await addNewAufgabe(newTask.value);
             console.log(newTask)

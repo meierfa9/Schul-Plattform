@@ -25,7 +25,7 @@ public class Task {
     private Boolean done;
 
     
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     //@JsonUnwrapped
     private Schulfach schulfach;
     

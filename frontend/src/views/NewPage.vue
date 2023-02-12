@@ -42,17 +42,7 @@
               <ion-text>Status der Aufgabe</ion-text>
             </ion-row>
             <ion-row>
-              <ion-input type="text" placeholder="Status" v-model="newTask.done"></ion-input>
-            </ion-row>
-          </ion-grid>
-          </ion-item>
-          <ion-item>
-          <ion-grid>
-            <ion-row>
-              <ion-text>Status der Aufgabe</ion-text>
-            </ion-row>
-            <ion-row>
-              <ion-input type="text" placeholder="Status" v-model="newTask.schulfach"></ion-input>
+              <ion-input type="number" placeholder="Status" v-model="newTask.schulfach"></ion-input>
             </ion-row>
           </ion-grid>
           </ion-item>
