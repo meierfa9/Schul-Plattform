@@ -46,9 +46,7 @@
                 </div>
               </ion-card-header>
 
-              <ion-card-content> Offene Aufgaben
-                <ion-badge>Anzahl</ion-badge>
-              </ion-card-content>
+              
             </ion-card>
           </ion-col>
         </ion-row>
