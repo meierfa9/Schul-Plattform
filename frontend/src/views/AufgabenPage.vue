@@ -23,13 +23,7 @@
                   {{ aufgabe.name }}
                 </ion-col>
                 <ion-col>
-                  <ion-button color="danger" @click="finishTask(aufgabe)"
-                    >Offen</ion-button
-                  >
-
-                  <ion-button color="success" v-if="aufgabe.done"
-                    >Erledigt</ion-button
-                  >
+                  <ion-button color="danger" @click="finishTask(aufgabe)">Offen</ion-button>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -57,15 +51,13 @@ import {
   IonButton,
   IonInput,
 } from "@ionic/vue";
+
 import { useTasks } from "../composables/useAufgaben";
 import { useRoute } from "vue-router";
 import { useFaecher } from "../composables/useFaecher";
 
-
-const { tasks, finishTask, /*addTask, archiveTask */ } = useTasks();
-
+const { tasks, finishTask } = useTasks();
 const { faecher, lehrer } = useFaecher();
-
 const route = useRoute();
 const { fach } = route.params;
 

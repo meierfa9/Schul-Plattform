@@ -23,14 +23,13 @@
                 {{ aufgabe.name }}
               </ion-col>
               <ion-col>
-                <ion-button
-                  color="danger"
-                  v-if="!aufgabe.done"
-                  >Offen</ion-button
-                >
-                <ion-badge color="success" v-if="aufgabe.done"
-                  >Erledigt</ion-badge
-                >
+                {{ aufgabe.description }}
+              </ion-col>
+              <ion-col>
+                {{ aufgabe.schulfach.title }}
+              </ion-col>
+              <ion-col>
+                <ion-badge color="success" v-if="aufgabe.done">Erledigt</ion-badge>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -56,19 +55,18 @@ import {
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
 
-const { tasksDone /*addTask, archiveTask */ } = useTasks();
+const { tasksDone } = useTasks();
 </script>
 
 <style scoped>
-
 ion-badge {
   font-weight: 2;
   font-size: 10pt;
-  text-transform:uppercase;
+  text-transform: uppercase;
   text-align: center;
   padding-block-start: 6px;
   background-color: success;
-  height:25px;
+  height: 25px;
   width: 85px;
 }
 </style>
