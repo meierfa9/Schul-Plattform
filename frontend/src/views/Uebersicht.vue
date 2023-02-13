@@ -86,11 +86,13 @@ import {
   IonButton,
   IonInput,
 } from "@ionic/vue";
+
 import { useFaecher } from "../composables/useFaecher";
 import { useTasks } from "../composables/useAufgaben";
-const { tasks, finishTask, tasksDone, tasksOpen, /*addTask, archiveTask */ } = useTasks();
+const { tasks, finishTask, tasksDone, tasksOpen } = useTasks();
 const { faecher, lehrer } = useFaecher();
 </script>
+
 <style scoped>
 /* iOS places the subtitle above the title */
 ion-card-header.ios {
