@@ -26,17 +26,20 @@
             <ion-card button :router-link="'/tabs/done/'">
               <img class="tasks" alt="done" src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png" />
               <ion-card-header>
-                <ion-card-title>Erledigte Aufgaben 
+                <ion-card-title>Erledigte Aufgaben
                   <ion-badge>Anzahl: {{ tasksDone.length }}</ion-badge>
                 </ion-card-title>
               </ion-card-header>
             </ion-card>
           </ion-col>
           <ion-col>
-            <img class="icon" alt="done" src="https://cdn-icons-png.flaticon.com/512/2311/2311991.png" />
-            <ion-button class="newtask" button :router-link="'/tabs/new/'" fill="clear">
-             + Neue Aufgabe hinzufügen</ion-button>
+            <ion-card class="newtask">
+              <img class="icon" alt="done" src="https://cdn-icons-png.flaticon.com/512/2311/2311991.png" />
+              <ion-button class="newtaskbutton" button :router-link="'/tabs/new/'" fill="clear">
+                + Neue Aufgabe hinzufügen</ion-button>
+            </ion-card>
           </ion-col>
+
         </ion-row>
       </ion-grid>
     </ion-content>
@@ -94,16 +97,14 @@ ion-badge {
 }
 
 .icon {
-  width: 3%;
+  width: 5%;
   position: absolute;
-  left: 20px;
-  top: 20px;
+  right: 20px;
+  top: 14px;
 }
 
 .newtask {
-  position: absolute;
-  left: 60px;
-  top: 24px;
-  font-size: 20px;
+  width: 320px;
 }
+
 </style>

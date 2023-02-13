@@ -11,15 +11,13 @@
 
     <ion-content :fullscreen="true">
 
-      <ion-item>
-      <ion-label class="label">
+      <ion-item class="label">
+      <ion-label>
         Erledigte Aufgaben</ion-label>
-        <img class="labelimg" alt="todo"
-        src="https://cdn-icons-png.flaticon.com/512/1442/1442912.png" />
       <ion-input></ion-input>
     </ion-item>
 
-      <div v-for="aufgabe in tasks" :key="aufgabe.id">
+      <div class="container" v-for="aufgabe in tasks" :key="aufgabe.id">
         <ion-card class="card" v-if="aufgabe.done">
           <ion-card-header>
             <ion-card-subtitle>{{ aufgabe.title }}</ion-card-subtitle>
@@ -65,10 +63,16 @@ ion-badge {
   width: 85px;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card {
   text-align: left;
   align-self: center;
-  width: 40%;
+  width: 500px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.503);
 }
 
@@ -82,18 +86,12 @@ ion-badge {
   padding: 5px 30px;
   display: right;
   position: absolute;
-  top: 5px;
-  right: 40px;
+  top: -30px;
+  right: 10px;
 }
 
 .label {
   font-size: 20px;
 }
 
-.labelimg {
-  width: 2%;
-  position: absolute;
-  left: 200px;
-  top: 4px;
-}
 </style>

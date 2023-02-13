@@ -126,7 +126,7 @@ ion-textarea {
 .card {
   text-align: left;
   align-self: center;
-  width: 60%;
+  width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.503);
 }
 

@@ -12,8 +12,6 @@
       <ion-item>
       <ion-label class="label">
         offene Aufgaben</ion-label>
-        <img class="labelimg" alt="todo"
-        src="https://cdn-icons-png.flaticon.com/512/2387/2387757.png" />
       <ion-input></ion-input>
     </ion-item>
 
@@ -23,7 +21,7 @@
         </ion-toolbar>
       </ion-header>
      
-      <div v-for="aufgabe in tasks" :key="aufgabe.id">
+      <div class="container" v-for="aufgabe in tasks" :key="aufgabe.id">
         <ion-card v-if="aufgabe.title === fach && !aufgabe.done">
           <ion-card-header>
             <ion-card-title>{{ aufgabe.name }}
@@ -71,22 +69,26 @@ const { fach } = route.params;
 ion-card {
   text-align: left;
   align-self: center;
-  width: 40%;
+  width: 500px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.503);
 }
 
 ion-card:hover {
   --background: rgba(211, 211, 211, 0.38);
 }
-
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .open {
   color: white;
   --background: red;
   padding: 5px 30px;
   display: right;
   position: absolute;
-  top: 15px;
-  right: 40px;
+  top: -10px;
+  right: 15px;
 }
 
 .open:hover {
@@ -101,29 +103,13 @@ ion-card:hover {
   padding: 5px 30px;
   display: right;
   position: absolute;
-  top: 3px;
-  right: 40px;
+  top: -10px;
+  right: 15px;
 }
 
 .label {
   font-size: 20px;
 }
 
-.labelimg {
-  width: 2%;
-  position: absolute;
-  left: 200px;
-  top: 5px;
-}
-.button {
-  color: black;
-  --background: lightgrey;
-  padding: 5px 30px;
-}
-.button:hover {
-  padding: 5px 30px;
-  --background: rgb(0, 106, 255);
-  color: white;
-}
 
 </style>
