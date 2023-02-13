@@ -13,7 +13,7 @@
 
       <ion-item>
       <ion-label class="label">
-        erledigte Aufgaben</ion-label>
+        Erledigte Aufgaben</ion-label>
         <img class="labelimg" alt="todo"
         src="https://cdn-icons-png.flaticon.com/512/1442/1442912.png" />
       <ion-input></ion-input>
@@ -23,7 +23,7 @@
         <ion-card class="card">
           <ion-card-header>
             <ion-card-title>{{ aufgabe.name }}
-              <ion-button class="done" v-if="aufgabe.done">Erledigt</ion-button>
+              <ion-button :disabled="true" class="done" v-if="aufgabe.done">Erledigt</ion-button>
             </ion-card-title>
             <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
           </ion-card-header>

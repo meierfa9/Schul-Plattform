@@ -24,8 +24,8 @@
           </ion-toolbar>
         </ion-header>
 
-        <div v-for="aufgabe in tasksOpen" :key="aufgabe.id">
-          <ion-card class="card">
+        <div v-for="aufgabe in tasks" :key="aufgabe.id">
+          <ion-card class="card" v-if="!aufgabe.done">
             <ion-card-header>
               <ion-card-title>{{ aufgabe.name }}
                 <ion-button class="open" @click="finishTask(aufgabe)">Offen</ion-button>
