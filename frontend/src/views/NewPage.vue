@@ -139,15 +139,5 @@ ion-textarea {
   height: 450px;
 }
 
-.button {
-  color: black;
-  --background: lightgrey;
-  padding: 5px 30px;
-}
-.button:hover {
-  padding: 5px 30px;
-  --background: rgb(0, 106, 255);
-  color: white;
-}
 
 </style>

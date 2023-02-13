@@ -11,7 +11,7 @@
     <ion-content :fullscreen="true">
       <ion-item>
       <ion-label class="label">
-        offene Aufgaben</ion-label>
+        Offene Aufgaben</ion-label>
       <ion-input></ion-input>
     </ion-item>
 

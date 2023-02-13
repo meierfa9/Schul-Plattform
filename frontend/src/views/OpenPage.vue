@@ -11,7 +11,7 @@
     <ion-content>
     <ion-item class="label">
       <ion-label>
-        offene Aufgaben</ion-label>
+        Offene Aufgaben</ion-label>
       <ion-input></ion-input>
     </ion-item>
 
