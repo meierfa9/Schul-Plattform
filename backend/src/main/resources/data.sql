@@ -1,12 +1,12 @@
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, KLASSE) VALUES ('Student', 'leonardo.daSilva','Student','da Silva',  'Leonardo', '3a');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, KLASSE) VALUES ('Student', 'nico.widmer','Student','Widmer',  'Nico', '3b');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, KLASSE) VALUES ('Student', 'luan.berisha','Student','Berisha',  'Luan', '4a');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, KLASSE) VALUES ('Student', 'mia.hunziker','Student','Hunziker',  'Mia', '5b');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, KLASSE) VALUES ('Student', 'sophie.sommer','Student','Sommer',  'Sophie', '6a');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, KLASSE) VALUES ('Student', 'leonardo.daSilva','Student','da Silva',  'Leonardo', '3a');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, KLASSE) VALUES ('Student', 'nico.widmer','Student','Widmer',  'Nico', '3b');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, KLASSE) VALUES ('Student', 'luan.berisha','Student','Berisha',  'Luan', '4a');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, KLASSE) VALUES ('Student', 'mia.hunziker','Student','Hunziker',  'Mia', '5b');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, KLASSE) VALUES ('Student', 'sophie.sommer','Student','Sommer',  'Sophie', '6a');
 
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, EMAIL) VALUES ('Teacher', 'g.steiner','Teacher','Steiner',  'Gianna', 'gianna.steiner@schule.ch');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, EMAIL) VALUES ('Teacher', 'e.zollinger','Teacher','Zollinger', 'Elena', 'elena.zollinger@schule.ch');
-INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, NAME, SURNAME, EMAIL) VALUES ('Teacher', 'l.gashi','Teacher','Gashi', 'Leart', 'leart.gashi@schule.ch');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, EMAIL) VALUES ('Teacher', 'g.steiner','Teacher','Steiner',  'Gianna', 'gianna.steiner@schule.ch');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, EMAIL) VALUES ('Teacher', 'e.zollinger','Teacher','Zollinger', 'Elena', 'elena.zollinger@schule.ch');
+INSERT INTO PERSONTABLE (STATUS, USER_NAME, HUMANTYPE, SURNAME, NAME, EMAIL) VALUES ('Teacher', 'l.gashi','Teacher','Gashi', 'Leart', 'leart.gashi@schule.ch');
 
 INSERT INTO SCHULFACH (TITLE, TEACHER_USER_NAME) VALUES ('Mathematik', 'g.steiner');
 INSERT INTO SCHULFACH (TITLE, TEACHER_USER_NAME) VALUES ('Deutsch', 'l.gashi');
