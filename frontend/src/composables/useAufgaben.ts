@@ -55,7 +55,7 @@ export function useTasks() {
             newTask.value.done = false;
             // add the new todo and update the list of all todos afterwards
             await addNewAufgabe(newTask.value);
-            console.log(newTask)
+            console.log(newTask);
             getTasks();
         } catch (error) {
             console.log(error); // FIXME: Errorhandling

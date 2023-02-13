@@ -10,35 +10,38 @@
     </ion-header>
     <ion-content :fullscreen="true">
       <ion-item>
-      <ion-label class="label">
-        Offene Aufgaben</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
+        <ion-label class="label"> Offene Aufgaben</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
 
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">{{ fach }}</ion-title>
         </ion-toolbar>
       </ion-header>
-     
+
       <div class="container" v-for="aufgabe in tasks" :key="aufgabe.id">
         <ion-card v-if="aufgabe.title === fach && !aufgabe.done">
           <ion-card-header>
-            <ion-card-title>{{ aufgabe.name }}
-              <ion-button class="open" @click="finishTask(aufgabe)">Offen</ion-button>
+            <ion-card-title
+              >{{ aufgabe.name }}
+              <ion-button class="open" @click="finishTask(aufgabe)"
+                >Offen</ion-button
+              >
               <ion-button class="done" v-if="aufgabe.done">Erledigt</ion-button>
             </ion-card-title>
             <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
-            <ion-card-subtitle>{{ aufgabe.teacher?.name + ' ' + aufgabe.teacher?.surname }}</ion-card-subtitle>
+            <ion-card-subtitle>{{
+              aufgabe.teacher?.name + " " + aufgabe.teacher?.surname
+            }}</ion-card-subtitle>
           </ion-card-header>
-      </ion-card>
-    </div>
+        </ion-card>
+      </div>
     </ion-content>
   </ion-page>
 </template>
   
 <script setup lang="ts">
-
 import {
   IonBackButton,
   IonPage,
@@ -63,7 +66,6 @@ const { tasks, finishTask } = useTasks();
 const { faecher, lehrer } = useFaecher();
 const route = useRoute();
 const { fach } = route.params;
-
 </script>
 <style scoped>
 ion-card {
@@ -110,6 +112,4 @@ ion-card:hover {
 .label {
   font-size: 20px;
 }
-
-
 </style>

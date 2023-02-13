@@ -9,11 +9,10 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-    <ion-item class="label">
-      <ion-label>
-        Offene Aufgaben</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
+      <ion-item class="label">
+        <ion-label> Offene Aufgaben</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
 
       <ion-content :fullscreen="true">
         <ion-header collapse="condense">
@@ -26,9 +25,14 @@
           <ion-card class="card" v-if="!aufgabe.done">
             <ion-card-header>
               <ion-card-subtitle>{{ aufgabe.title }}</ion-card-subtitle>
-              <ion-card-title>{{ aufgabe.name }}
-                <ion-button class="open" @click="finishTask(aufgabe)">Offen</ion-button>
-                <ion-button class="done" v-if="aufgabe.done">Erledigt</ion-button>
+              <ion-card-title
+                >{{ aufgabe.name }}
+                <ion-button class="open" @click="finishTask(aufgabe)"
+                  >Offen</ion-button
+                >
+                <ion-button class="done" v-if="aufgabe.done"
+                  >Erledigt</ion-button
+                >
               </ion-card-title>
               <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
             </ion-card-header>
@@ -52,12 +56,10 @@ import {
   IonCol,
   IonCard,
   IonItem,
-  IonList
+  IonList,
 } from "@ionic/vue";
 import { useTasks } from "../composables/useAufgaben";
-const { tasks, tasksOpen, finishTask, /*addTask, archiveTask */ } =
-  useTasks();
-
+const { tasks, tasksOpen, finishTask } = useTasks();
 </script>
 
 <style scope>
@@ -107,5 +109,4 @@ const { tasks, tasksOpen, finishTask, /*addTask, archiveTask */ } =
 .label {
   font-size: 20px;
 }
-
 </style>

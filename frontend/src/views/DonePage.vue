@@ -10,19 +10,20 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-
       <ion-item class="label">
-      <ion-label>
-        Erledigte Aufgaben</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
+        <ion-label> Erledigte Aufgaben</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
 
       <div class="container" v-for="aufgabe in tasks" :key="aufgabe.id">
         <ion-card class="card" v-if="aufgabe.done">
           <ion-card-header>
             <ion-card-subtitle>{{ aufgabe.title }}</ion-card-subtitle>
-            <ion-card-title>{{ aufgabe.name }}
-              <ion-button :disabled="true" class="done" v-if="aufgabe.done">Erledigt</ion-button>
+            <ion-card-title
+              >{{ aufgabe.name }}
+              <ion-button :disabled="true" class="done" v-if="aufgabe.done"
+                >Erledigt</ion-button
+              >
             </ion-card-title>
             <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
           </ion-card-header>
@@ -93,5 +94,4 @@ ion-badge {
 .label {
   font-size: 20px;
 }
-
 </style>

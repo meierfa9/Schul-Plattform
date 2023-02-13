@@ -16,17 +16,31 @@
         <ion-row>
           <ion-col size-xs="12" size-md="6">
             <ion-card button :router-link="'/tabs/open/'">
-              <img class="tasks" alt="todo" src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png" />
+              <img
+                class="tasks"
+                alt="todo"
+                src="https://cdn-icons-png.flaticon.com/512/7590/7590241.png"
+              />
               <ion-card-header>
-                <ion-card-title>Offene Aufgaben <ion-badge> Anzahl: {{ tasksOpen.length }}</ion-badge></ion-card-title>
+                <ion-card-title
+                  >Offene Aufgaben
+                  <ion-badge>
+                    Anzahl: {{ tasksOpen.length }}</ion-badge
+                  ></ion-card-title
+                >
               </ion-card-header>
             </ion-card>
           </ion-col>
           <ion-col size-xs="12" size-md="6">
             <ion-card button :router-link="'/tabs/done/'">
-              <img class="tasks" alt="done" src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png" />
+              <img
+                class="tasks"
+                alt="done"
+                src="https://cdn-icons-png.flaticon.com/512/9028/9028946.png"
+              />
               <ion-card-header>
-                <ion-card-title>Erledigte Aufgaben
+                <ion-card-title
+                  >Erledigte Aufgaben
                   <ion-badge>Anzahl: {{ tasksDone.length }}</ion-badge>
                 </ion-card-title>
               </ion-card-header>
@@ -34,12 +48,21 @@
           </ion-col>
           <ion-col>
             <ion-card class="newtask">
-              <img class="icon" alt="done" src="https://cdn-icons-png.flaticon.com/512/2311/2311991.png" />
-              <ion-button class="newtaskbutton" button :router-link="'/tabs/new/'" fill="clear">
-                + Neue Aufgabe hinzufügen</ion-button>
+              <img
+                class="icon"
+                alt="done"
+                src="https://cdn-icons-png.flaticon.com/512/2311/2311991.png"
+              />
+              <ion-button
+                class="newtaskbutton"
+                button
+                :router-link="'/tabs/new/'"
+                fill="clear"
+              >
+                + Neue Aufgabe hinzufügen</ion-button
+              >
             </ion-card>
           </ion-col>
-
         </ion-row>
       </ion-grid>
     </ion-content>
@@ -70,7 +93,6 @@ import { key } from "ionicons/icons";
 import { useRoute } from "vue-router";
 import { useTasks } from "../composables/useAufgaben";
 const { tasks, finishTask, tasksDone, tasksOpen } = useTasks();
-
 </script>
 
 <style scoped>
@@ -106,5 +128,4 @@ ion-badge {
 .newtask {
   width: 320px;
 }
-
 </style>
