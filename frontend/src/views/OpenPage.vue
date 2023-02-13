@@ -27,12 +27,12 @@
         <div v-for="aufgabe in tasks" :key="aufgabe.id">
           <ion-card class="card" v-if="!aufgabe.done">
             <ion-card-header>
+              <ion-card-subtitle>{{ aufgabe.title }}</ion-card-subtitle>
               <ion-card-title>{{ aufgabe.name }}
                 <ion-button class="open" @click="finishTask(aufgabe)">Offen</ion-button>
                 <ion-button class="done" v-if="aufgabe.done">Erledigt</ion-button>
               </ion-card-title>
               <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
-              <ion-card-subtitle>{{ aufgabe.title }}</ion-card-subtitle>
             </ion-card-header>
           </ion-card>
         </div>
