@@ -32,6 +32,7 @@
                 <ion-button class="done" v-if="aufgabe.done">Erledigt</ion-button>
               </ion-card-title>
               <ion-card-subtitle>{{ aufgabe.description }}</ion-card-subtitle>
+              <ion-card-subtitle>{{ aufgabe.title }}</ion-card-subtitle>
             </ion-card-header>
           </ion-card>
         </div>
