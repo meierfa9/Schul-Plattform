@@ -60,17 +60,5 @@ public class PersonRest {
     public List<Person> listAllPersons() {
         return personRepository.findAll();
     }
-    /*
-     * @GetMapping(path="/api/person/{status}")
-     * public ResponseEntity<Person> getPersonsByStatus(@PathVariable("status")
-     * String status) {
-     * List<Person> person = personRepository.findByStatus(status);
-     * if(person.isEmpty()) {
-     * return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-     * }
-     * else {
-     * return new ResponseEntity<Person>(,HttpStatus.OK);
-     * }
-     * }
-     */
+
 }

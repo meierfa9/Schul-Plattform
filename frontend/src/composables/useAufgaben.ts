@@ -11,30 +11,33 @@ export function useTasks() {
 
     const newTask = ref<Aufgabe>({});
     
+    //GET-REQUEST alle Tasks
     const getTasks = async () => {
         try {
             tasks.value = await getAufgabe();
             console.log(tasks)
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error); 
         }
     }
-    
+
+    //GET-REQUEST erledigte Tasks
     const getDoneTasks = async () => {
         try {
             tasksDone.value = await getDoneAufgabe();
             console.log(tasksDone)
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error); 
         }
     }
 
+    //GET-REQUEST offene Tasks
     const getOpenTasks = async () => {
         try {
             tasksOpen.value = await getOpenAufgabe();
             console.log(tasksOpen)
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error); 
         }
     }
 
@@ -45,7 +48,7 @@ export function useTasks() {
             task.done = true;
             updateAufgabe(task);
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error); 
         }
     }
 
@@ -53,12 +56,11 @@ export function useTasks() {
     const addTask = async (task: Aufgabe) => {
         try {
             newTask.value.done = false;
-            // add the new todo and update the list of all todos afterwards
             await addNewAufgabe(newTask.value);
             console.log(newTask);
             getTasks();
         } catch (error) {
-            console.log(error); // FIXME: Errorhandling
+            console.log(error); 
         }
     }
 

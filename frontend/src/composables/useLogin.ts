@@ -11,8 +11,6 @@ export function useLogin() {
     const login = async () => {
         try {
             const token = await getToken(username.value, password.value);
-            // TODO: do something meaningful with the token :-)
-            //console.log(token)
             router.push('/tabs/home')
         } catch (error) {
             console.log(error)

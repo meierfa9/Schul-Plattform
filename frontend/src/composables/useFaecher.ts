@@ -9,6 +9,7 @@ export function useFaecher() {
 
     const lehrer = ref<any>([]);
 
+    //GET-REQUEST alle Fächer
     const getFaecher =async () => {
         faecher.value = await getFach();
         console.log(faecher)      

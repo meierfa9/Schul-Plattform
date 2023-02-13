@@ -1,10 +1,8 @@
 package ch.zhaw.sml.iwi.meng.leantodo.boundary;
 import org.springframework.http.ResponseEntity;
-//import org.springframework.security.access.annotation.Secured;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Map;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +31,6 @@ public class TaskRest {
     }
 
     @RequestMapping(path = "/api/tasks", method=RequestMethod.POST)
-    //@Secured("ROLE_STUDENT")
     public ResponseEntity<Task> addTask(@RequestBody Task newTask) {
         Task persistedTask = taskRepository.save(newTask);
         return ResponseEntity
@@ -74,29 +71,5 @@ public class TaskRest {
         }
 
     }
-    /*
-    @GetMapping(path = "/api/Tasks/{schulfach}")
-    public ResponseEntity<Object> getPersonsbyHumanType(@PathVariable("schulfach") Object schulfach) {
-        List<Task> tasks = new ArrayList<>();
-        tasks = taskRepository.findByFach(schulfach);
 
-        List<JSONObject> entities = new ArrayList<JSONObject>();
-        for (Task n : tasks) {
-            JSONObject entity = new JSONObject();
-            entity.put("id", n.getId());
-            entity.put("name", n.getName());
-            entity.put("surname", n.getDescription());
-            entity.put("humantype", n.getDone());
-            entity.put("humantype", n.getSchulfach());
-            entities.add(entity);
-        }
-
-        if (tasks.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
-            return new ResponseEntity<Object>(entities, HttpStatus.OK);
-        }
-
-    }
-    */
 }
